@@ -14,6 +14,9 @@
 		2F091BE924693FD40089A450 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F091BE824693FD40089A450 /* main.m */; };
 		2F091BF424693FD40089A450 /* MidiBirdTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F091BF324693FD40089A450 /* MidiBirdTests.m */; };
 		2F091BFF24693FD40089A450 /* MidiBirdUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F091BFE24693FD40089A450 /* MidiBirdUITests.m */; };
+		2F091C0E246940510089A450 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F091C0D246940510089A450 /* AVFoundation.framework */; };
+		2F091DAC246A8EC30089A450 /* MidiWorkerMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F091DAB246A8EC30089A450 /* MidiWorkerMac.framework */; };
+		2F091DAD246A8EC30089A450 /* MidiWorkerMac.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2F091DAB246A8EC30089A450 /* MidiWorkerMac.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +36,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		2F091DAE246A8EC30089A450 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2F091DAD246A8EC30089A450 /* MidiWorkerMac.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		2F091BD924693FD10089A450 /* MidiBird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MidiBird.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F091BDC24693FD10089A450 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -50,6 +67,8 @@
 		2F091BFA24693FD40089A450 /* MidiBirdUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MidiBirdUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F091BFE24693FD40089A450 /* MidiBirdUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MidiBirdUITests.m; sourceTree = "<group>"; };
 		2F091C0024693FD40089A450 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F091C0D246940510089A450 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		2F091DAB246A8EC30089A450 /* MidiWorkerMac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MidiWorkerMac.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +76,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F091C0E246940510089A450 /* AVFoundation.framework in Frameworks */,
+				2F091DAC246A8EC30089A450 /* MidiWorkerMac.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +105,7 @@
 				2F091BF224693FD40089A450 /* MidiBirdTests */,
 				2F091BFD24693FD40089A450 /* MidiBirdUITests */,
 				2F091BDA24693FD10089A450 /* Products */,
+				2F091C0C246940510089A450 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,6 +153,15 @@
 			path = MidiBirdUITests;
 			sourceTree = "<group>";
 		};
+		2F091C0C246940510089A450 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2F091DAB246A8EC30089A450 /* MidiWorkerMac.framework */,
+				2F091C0D246940510089A450 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -141,6 +172,7 @@
 				2F091BD524693FD10089A450 /* Sources */,
 				2F091BD624693FD10089A450 /* Frameworks */,
 				2F091BD724693FD10089A450 /* Resources */,
+				2F091DAE246A8EC30089A450 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -427,6 +459,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = LW2C2PTSH8;
 				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MidiBird/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -446,6 +482,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = LW2C2PTSH8;
 				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MidiBird/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
