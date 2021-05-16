@@ -17,6 +17,10 @@
 		2F091C0E246940510089A450 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F091C0D246940510089A450 /* AVFoundation.framework */; };
 		2F091DAC246A8EC30089A450 /* MidiWorkerMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F091DAB246A8EC30089A450 /* MidiWorkerMac.framework */; };
 		2F091DAD246A8EC30089A450 /* MidiWorkerMac.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2F091DAB246A8EC30089A450 /* MidiWorkerMac.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2F112895246C496B001A3323 /* MidiBirdConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F112894246C496B001A3323 /* MidiBirdConfig.m */; };
+		2F112898246C4C93001A3323 /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F112897246C4C93001A3323 /* ConfigViewController.m */; };
+		2F11289A246D4C34001A3323 /* help.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2F112899246D4C34001A3323 /* help.rtf */; };
+		2F11289E246D4CA5001A3323 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F11289C246D4CA5001A3323 /* HelpViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +73,13 @@
 		2F091C0024693FD40089A450 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F091C0D246940510089A450 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		2F091DAB246A8EC30089A450 /* MidiWorkerMac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MidiWorkerMac.framework; sourceTree = "<group>"; };
+		2F112893246C496B001A3323 /* MidiBirdConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MidiBirdConfig.h; sourceTree = "<group>"; };
+		2F112894246C496B001A3323 /* MidiBirdConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MidiBirdConfig.m; sourceTree = "<group>"; };
+		2F112896246C4C93001A3323 /* ConfigViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigViewController.h; sourceTree = "<group>"; };
+		2F112897246C4C93001A3323 /* ConfigViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConfigViewController.m; sourceTree = "<group>"; };
+		2F112899246D4C34001A3323 /* help.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = help.rtf; sourceTree = "<group>"; };
+		2F11289B246D4CA5001A3323 /* HelpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
+		2F11289C246D4CA5001A3323 /* HelpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +142,13 @@
 				2F091BE724693FD40089A450 /* Info.plist */,
 				2F091BE824693FD40089A450 /* main.m */,
 				2F091BEA24693FD40089A450 /* MidiBird.entitlements */,
+				2F112893246C496B001A3323 /* MidiBirdConfig.h */,
+				2F112894246C496B001A3323 /* MidiBirdConfig.m */,
+				2F112896246C4C93001A3323 /* ConfigViewController.h */,
+				2F112897246C4C93001A3323 /* ConfigViewController.m */,
+				2F112899246D4C34001A3323 /* help.rtf */,
+				2F11289B246D4CA5001A3323 /* HelpViewController.h */,
+				2F11289C246D4CA5001A3323 /* HelpViewController.m */,
 			);
 			path = MidiBird;
 			sourceTree = "<group>";
@@ -267,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F091BE324693FD40089A450 /* Assets.xcassets in Resources */,
+				2F11289A246D4C34001A3323 /* help.rtf in Resources */,
 				2F091BE624693FD40089A450 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,6 +312,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F091BE124693FD10089A450 /* ViewController.m in Sources */,
+				2F11289E246D4CA5001A3323 /* HelpViewController.m in Sources */,
+				2F112895246C496B001A3323 /* MidiBirdConfig.m in Sources */,
+				2F112898246C4C93001A3323 /* ConfigViewController.m in Sources */,
 				2F091BE924693FD40089A450 /* main.m in Sources */,
 				2F091BDE24693FD10089A450 /* AppDelegate.m in Sources */,
 			);
@@ -457,6 +479,7 @@
 				CODE_SIGN_ENTITLEMENTS = MidiBird/MidiBird.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = LW2C2PTSH8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -480,6 +503,7 @@
 				CODE_SIGN_ENTITLEMENTS = MidiBird/MidiBird.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = LW2C2PTSH8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (

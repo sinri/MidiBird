@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import <MidiWorkerMac/MidiWorkerMac.h>
+#import "MidiBirdConfig.h"
 
 @interface ViewController() //: NSViewController
 
@@ -159,16 +160,17 @@
 }
 
 -(NSData*)generateMidiDataFromDraftString:(NSString*)draft{
+    MidiBirdConfig *config=[MidiBirdConfig sharedInstance];
     MidiWorker*_worker=[[MidiWorker alloc]init];
     //Name
     [_worker setName:@"MidiBirdDraft"];
     //Tempo
-    [_worker setTempo:0x078300];
+    [_worker setTempo:(int)([config configTempo]*[MidiBirdConfig tempoStandard])];//0x078300
     //Time Signature
-    [_worker setTimeSignatureNumerator:4];
-    [_worker setTimeSignatureDenominator:2];
-    [_worker setTimeSignatureMetronome:24];
-    [_worker setTimeSignature32ndCount:8];
+    [_worker setTimeSignatureNumerator:[config configTSNumerator]];//4
+    [_worker setTimeSignatureDenominator:[config configTSDenominator]];//2
+    [_worker setTimeSignatureMetronome:[config configTSMetronome]];//24
+    [_worker setTimeSignature32ndCount:[config configTS32ndCount]];//8
     //Key Signature
     [_worker setKeySignature:Major_C];
     
@@ -244,6 +246,13 @@
 - (IBAction)progressSliderAction:(id)sender {
     NSLog(@"progressSliderAction -> %f",[_progressSlider floatValue]);
     [_player setCurrentPosition:[_progressSlider floatValue]];
+}
+
+#pragma mark debug
+
+-(void)openDocument:(id)sender{
+    NSLog(@"openDocument: %@",sender);
+    [self whenLoadButtonClicked:sender];
 }
 
 @end

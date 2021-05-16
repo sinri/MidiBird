@@ -1,0 +1,6 @@
+framework module MidiWorkerMac {
+  umbrella header "MidiWorkerMac.h"
+
+  export *
+  module * { export * }
+}
